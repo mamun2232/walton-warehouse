@@ -3,10 +3,11 @@ import './App.css';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Pages/Home/Header/Header';
 function App() {
   return (
-    <div className="App">
-      
+    <div className="Apps">
+      <Header></Header>
     </div>
   );
 }
