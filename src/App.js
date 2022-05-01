@@ -12,6 +12,7 @@ import AddItem from './Pages/Item/AddItem/AddItem';
 import MyItem from './Pages/Item/MyItem/MyItem';
 import Login from './Pages/Login/Login/Login';
 import Detials from './Pages/Home/Home/Detilas/Detials';
+import { ToastContainer, toast } from 'react-toastify';
 function App() {
   return (
     <div className="Apps">
@@ -25,6 +26,8 @@ function App() {
         <Route path='/myItem' element={<MyItem></MyItem>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
+
     </div>
   );
 }
