@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button, Card, FormControl, InputGroup } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import './Detials.css'
@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 const Detials = () => {
       const { id } = useParams()
       const [product, setProduct] = useState([])
+      const quentityRef = useRef(0)
 
 
       useEffect(() => {
@@ -17,7 +18,7 @@ const Detials = () => {
 
       }, [product])
 
-      // remove quentity 
+
 
       const delivetProduct = (id) => {
             const newQuentity = product.quentity - 1
@@ -33,7 +34,9 @@ const Detials = () => {
                         },
                   })
                         .then((response) => response.json())
-                        .then((json) => console.log(json));
+                        .then((json) => {
+                              toast(json.success)
+                        });
 
             }
             else {
@@ -43,6 +46,39 @@ const Detials = () => {
 
       }
 
+      // remove quentity 
+      const addQuentiy = event => {
+            event.preventDefault()
+            const addedQuentity = quentityRef.current.value
+
+            if(addedQuentity > 0){
+                  const newQuentity = parseInt(product.quentity) + parseInt(addedQuentity)
+
+
+            fetch(`http://localhost:5000/products/${id}`, {
+                  method: 'PUT',
+                  body: JSON.stringify({
+                        newQuentity
+                  }),
+                  headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                  },
+            })
+                  .then((response) => response.json())
+                  .then((json) => {
+                        toast(json.success)
+                  });
+
+            }
+            else{
+                  toast('please enter a positive value')
+            }
+
+            
+
+
+
+      }
 
 
 
@@ -99,8 +135,8 @@ const Detials = () => {
 
                                           <form onSubmit={addQuentiy}>
                                                 <div className="input-grup">
-                                                <input className='form-control quentity-filed' type="number" name="number" id="" />
-                                                <input className='btn btn-primary my-2' type="submit" value="Add Quentity" />
+                                                      <input ref={quentityRef} className='form-control quentity-filed' type="number" name="number" id="" />
+                                                      <input className='btn btn-primary my-2' type="submit" value="Add Quentity" />
                                                 </div>
                                           </form>
 
