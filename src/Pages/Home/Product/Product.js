@@ -1,9 +1,17 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './Product.css'
 
 const Product = ({ product }) => {
-      const { name, img, price, quentity, description } = product
+      const navigate = useNavigate()
+      const {_id , name, img, price, quentity, description } = product
+
+
+      const productDetils = (id) =>{
+            navigate(`/manageItem/${id}`)
+           
+      } 
       return (
             <div className="card p-3 bg-light">
                   <div className="product-section text-center">
@@ -15,7 +23,7 @@ const Product = ({ product }) => {
                               <h4 className='text-danger'>BDT {price}</h4>
                               <p>{description}</p>
                         </div>
-                        <button className='btn btn-primary'>Update</button>
+                        <button onClick={() => productDetils(_id)} className='btn btn-primary'>Update</button>
                         
                               {/* <Card className=''>
                                     <div className='text-center'>
