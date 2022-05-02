@@ -1,21 +1,27 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import useProduct from '../../CustomHok/useProduct';
 
 const ManageItem = () => {
+      const navigate = useNavigate()
+
+      const newAddItemHundeler = () =>{
+            navigate('/addItem')
+      }
 
       const [products, setProduct] = useProduct()
       return (
-            <div className="manage-itemlist">
+            <div className="manage-itemlist mt-3">
                   <div className="container">
                         <div className="all-item">
-                              <h3>All Manage Item</h3>
-                              <Table striped bordered hover>
+                              <h3 className='text-center'>All Manage Item</h3>
+                              <Table className='bg-light' striped bordered hover responsive>
                                     <thead>
                                           <tr className=''>
 
                                                 <th className='w-25'>Product Name</th>
-                                                <th>Email Id</th>
+                                                <th className=''>Email Id</th>
                                                 <th>Price</th>
                                                 <th>Quentity</th>
 
@@ -30,7 +36,7 @@ const ManageItem = () => {
                                                       <tr>
 
                                                             <td>{product.name}</td>
-                                                            <td>{ }</td>
+                                                            <td>juborajvai@gmail.com</td>
                                                             <td>{product.price}</td>
                                                             <td>{product.quentity}</td>
                                                             <td>delect</td>
@@ -43,7 +49,7 @@ const ManageItem = () => {
                                     </tbody>
                               </Table>
                               <div className='text-end'>
-                                    <button className='btn btn-primary'>Add New Item</button>
+                                    <button onClick={newAddItemHundeler} className='btn btn-primary'>Add New Item</button>
                               </div>
                         </div>
                   </div>

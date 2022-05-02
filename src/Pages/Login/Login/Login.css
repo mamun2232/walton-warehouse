@@ -1,0 +1,23 @@
+.login-from{
+     
+      border: 1px solid gray;
+  height: 100%;
+   padding: 50px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+.input-grup input:not([type=checkbox]){
+      width: 440px;
+      height: 42px;
+      border-radius: 10px;
+      font-size: 18px;
+      padding: 0px 10px;
+      margin-top: 15px;
+}
+
+.login-massage{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
