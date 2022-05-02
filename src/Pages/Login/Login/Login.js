@@ -8,7 +8,7 @@ const Login = () => {
             navigate('/register')
       }
       return (
-            <div className="login-section">
+            <div className="login-section my-4">
                   <div className="container">
                         <div className="row">
                               <div className="col-lg-5">
@@ -23,14 +23,14 @@ const Login = () => {
                               <div className="col-lg-7">
                                     <div className="login-from">
                                           <div>
-                                                <h3 className='text-center'>Login to walton</h3>
+                                                <h3 className='text-center my-5'>Login to walton</h3>
                                                 <form>
-                                                      <div className="input-grup">
-                                                            <input type="email" name="email" id="" />
+                                                      <div className="input-grups">
+                                                            <input className='input-shadow' type="email" name="email" id="" />
                                                             <br />
-                                                            <input type="password" name="" id="" />
+                                                            <input className='input-shadow' type="password" name="" id="" />
                                                             <br />
-                                                            <input type="submit" value="Login" />
+                                                            <input className='submit-btn' type="submit" value="Login" />
                                                             <p className='text-end'>forgate Password</p>
 
 

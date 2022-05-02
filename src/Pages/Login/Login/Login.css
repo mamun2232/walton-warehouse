@@ -1,23 +1,38 @@
 .login-from{
      
-      border: 1px solid gray;
+      border: 1px solid lavender;
   height: 100%;
    padding: 50px 0px;
       display: flex;
       align-items: center;
       justify-content: center;
 }
-.input-grup input:not([type=checkbox]){
+.input-grups input:not([type=checkbox]){
+      border: 1px solid lavender;
       width: 440px;
       height: 42px;
       border-radius: 10px;
       font-size: 18px;
       padding: 0px 10px;
       margin-top: 15px;
+      /* background-color: rgb(14, 130, 231); */
+}
+
+.input-shadow{
+      box-shadow: 1px 1px 0px 0px rgb(12, 123, 234);
+
 }
 
 .login-massage{
       display: flex;
       align-items: center;
       justify-content: center;
+}
+
+.submit-btn{
+      background-color: rgb(14, 130, 231);
+      border: none;
+      color: aliceblue;
+      font-weight: 600;
+      
 }
