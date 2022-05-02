@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Card, FormControl, InputGroup } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Detials.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
@@ -9,6 +9,7 @@ const Detials = () => {
       const { id } = useParams()
       const [product, setProduct] = useState([])
       const quentityRef = useRef(0)
+      const navigate = useNavigate()
 
 
       useEffect(() => {
@@ -73,13 +74,11 @@ const Detials = () => {
             else{
                   toast('please enter a positive value')
             }
-
-            
-
-
-
       }
 
+      const manageItemHendeler = () =>{
+            navigate('/manageItem')
+      }
 
 
 
@@ -144,7 +143,7 @@ const Detials = () => {
                               </div>
                         </div>
                         <div className='text-end'>
-                              <button className='btn btn-primary '>Go All Item</button>
+                              <button onClick={manageItemHendeler} className='btn btn-primary '>Go ManageITem</button>
                         </div>
                   </div>
 
