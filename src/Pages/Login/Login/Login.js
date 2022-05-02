@@ -1,11 +1,62 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { wait } from '@testing-library/user-event/dist/utils';
+import React, { useRef } from 'react';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 const Login = () => {
       const navigate = useNavigate()
-      const registerHundeler = () =>{
+      const emailRef = useRef('')
+      const passwordRef = useRef('')
+      const [user] = useAuthState(auth)
+      let location = useLocation();
+
+      let from = location.state?.from?.pathname || "/";
+      const [
+            signInWithEmailAndPassword,
+            uses,
+            loading,
+            error,
+      ] = useSignInWithEmailAndPassword(auth);
+      const registerHundeler = () => {
             navigate('/register')
+      }
+      const loginFromHundeler = async (event) => {
+            event.preventDefault()
+            const email = emailRef.current.value
+            const password = passwordRef.current.value
+           await signInWithEmailAndPassword(email, password)
+      }
+
+      const [sendPasswordResetEmail, sending, errors] = useSendPasswordResetEmail(
+            auth
+          );
+
+      //      porgate password 
+      const forgatePassword = () => {
+            const email = emailRef.current.value
+            if (email) {
+                  sendPasswordResetEmail(email)
+                  toast('Send Email')
+
+
+            }
+            else{
+                  toast('Please Provite Email')
+            }
+
+      }
+
+      let erorMassage;
+      if (error) {
+            erorMassage = <p className='text-danger'>{error?.message}</p>
+
+      }
+
+      if(user){
+            navigate(from, { replace: true })
       }
       return (
             <div className="login-section my-4">
@@ -14,9 +65,9 @@ const Login = () => {
                               <div className="col-lg-5">
                                     <div className="login-massage h-100 bg-light">
                                           <div className='text-center'>
-                                          <h3>Hello , Friend</h3>
-                                          <p>Enter parsinal Details and start Jurny with us</p>
-                                          <button onClick={registerHundeler} className='btn btn-primary'>Signup</button>
+                                                <h3>Hello , Friend</h3>
+                                                <p>Enter parsinal Details and start Jurny with us</p>
+                                                <button onClick={registerHundeler} className='btn btn-primary'>Signup</button>
                                           </div>
                                     </div>
                               </div>
@@ -24,21 +75,22 @@ const Login = () => {
                                     <div className="login-from">
                                           <div>
                                                 <h3 className='text-center my-5'>Login to walton</h3>
-                                                <form>
+                                                <form onSubmit={loginFromHundeler}>
                                                       <div className="input-grups">
-                                                            <input className='input-shadow' type="email" name="email" id="" />
+                                                            <input ref={emailRef} className='input-shadow' type="email" name="email" id="" />
                                                             <br />
-                                                            <input className='input-shadow' type="password" name="" id="" />
+                                                            <input ref={passwordRef}  className='input-shadow' type="password" name="" id="" />
                                                             <br />
                                                             <input className='submit-btn' type="submit" value="Login" />
-                                                            <p className='text-end'>forgate Password</p>
+                                                            {erorMassage}
+                                                            <p onClick={forgatePassword} className='text-end mt-2'>forgate Password</p>
 
 
                                                       </div>
                                                 </form>
                                                 <SocialLogin></SocialLogin>
                                           </div>
-                                          
+
 
                                     </div>
                               </div>

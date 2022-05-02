@@ -1,6 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { async } from '@firebase/util';
 
 const Register = () => {
       const navigate = useNavigate()
@@ -8,20 +11,53 @@ const Register = () => {
       const emailRef = useRef('')
       const passwordRef = useRef('')
       const conframPassRef = useRef('')
+      const [errors , setEroor] = useState('')
+      const [user] = useAuthState(auth)
+      
+
+
+      // create user 
+      const [
+            createUserWithEmailAndPassword,
+            users,
+            loading,
+            error,
+          ] = useCreateUserWithEmailAndPassword(auth , { sendEmailVerification: true });
+          
+      //     update usre 
+      const [updateProfile, updating, error1] = useUpdateProfile(auth);
 
       // login hundeler 
       const loginHundeler = () => {
             navigate('/login')
       }
 
-      const fromsubmitHendeler =(event) =>{
+      const fromsubmitHendeler = async (event) =>{
             event.preventDefault()
             const name = nameRef.current.value
             const email = emailRef.current.value
             const password = passwordRef.current.value
             const conframPass = conframPassRef.current.value
             console.log(name , email , password , conframPass);
+            if(password !== conframPass){
+                  setEroor('Your Password Dont Match')
+                return
+                 
+            }
+           await createUserWithEmailAndPassword(email , password)
+           await updateProfile({ displayName: name })
+           setEroor('')
+           
 
+      }
+      let erorMassage;
+      if(error){
+            erorMassage = <p className='text-danger'>{error?.message}</p>
+
+      }
+      if(user){
+            navigate('/')
+            console.log(user);
       }
       return (
             <div className="register-section my-4">
@@ -40,6 +76,8 @@ const Register = () => {
                                                             <input ref={passwordRef} className='input-shadow' placeholder='Password' type="password" name="password" id="" /><br />
                                                             <input ref={conframPassRef} className='input-shadow' placeholder='Confrom Password' type="password" name="confromPassword" id="" />
                                                             <br />
+                                                            {erorMassage ||  <p className='text-danger'>{errors}</p> }
+                                                           
                                                             <div className='mt-2'>
                                                                   <input type="checkbox" name="chack" id="" />
                                                                   <label htmlFor="">Accept Gym Center Terms and Conditions</label>

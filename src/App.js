@@ -14,17 +14,26 @@ import Login from './Pages/Login/Login/Login';
 import Detials from './Pages/Home/Home/Detilas/Detials';
 import { ToastContainer, toast } from 'react-toastify';
 import Register from './Pages/Login/Register/Register';
+import RequareAuth from './Pages/Login/RequareAuth/RequareAuth';
 function App() {
   return (
     <div className="Apps">
       <Header></Header>
-     
+
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/manageItem' element={<ManageItem></ManageItem>}></Route>
-        <Route path='/manageItem/:id' element={<Detials></Detials>}></Route>
-        <Route path='/addItem' element={<AddItem></AddItem>}></Route>
-        <Route path='/myItem' element={<MyItem></MyItem>}></Route>
+        <Route path='/manageItem' element={<RequareAuth>
+          <ManageItem></ManageItem>
+        </RequareAuth>}></Route>
+        <Route path='/manageItem/:id' element={<RequareAuth>
+          <Detials></Detials>
+        </RequareAuth>}></Route>
+        <Route path='/addItem' element={<RequareAuth>
+          <AddItem></AddItem>
+        </RequareAuth>}></Route>
+        <Route path='/myItem' element={<RequareAuth>
+          <MyItem></MyItem>
+        </RequareAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
