@@ -11,6 +11,7 @@ const ManageItem = () => {
       }
 
       const [products, setProduct] = useProduct()
+      console.log(products);
       return (
             <div className="manage-itemlist mt-3">
                   <div className="container">
@@ -21,7 +22,7 @@ const ManageItem = () => {
                                           <tr className=''>
 
                                                 <th className='w-25'>Product Name</th>
-                                                <th className=''>Email Id</th>
+                                                <th className=''>Supler Name</th>
                                                 <th>Price</th>
                                                 <th>Quentity</th>
 
@@ -36,7 +37,7 @@ const ManageItem = () => {
                                                       <tr>
 
                                                             <td>{product.name}</td>
-                                                            <td>juborajvai@gmail.com</td>
+                                                            <td>{product.suplerName}</td>
                                                             <td>{product.price}</td>
                                                             <td>{product.quentity}</td>
                                                             <td>delect</td>

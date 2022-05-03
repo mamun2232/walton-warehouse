@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import logo from '../../../Picture/logo.png'
 import './Login.css'
 const Login = () => {
       const navigate = useNavigate()
@@ -75,6 +76,9 @@ const Login = () => {
                                     <div className="login-from">
                                           <div>
                                                 <h3 className='text-center my-5'>Login to walton</h3>
+                                               {/* <div className='text-center'>
+                                               <img  src={logo} alt="" />
+                                               </div> */}
                                                 <form onSubmit={loginFromHundeler}>
                                                       <div className="input-grups">
                                                             <input ref={emailRef} className='input-shadow' type="email" name="email" id="" />
