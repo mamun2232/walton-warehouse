@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { toast } from 'react-toastify';
 import './AddItem.css'
 
 const AddItem = () => {
@@ -9,7 +10,7 @@ const AddItem = () => {
       const urlRef = useRef('')
       const descriptionRef = useRef('')
 
-      const addItemHundeler = (event) =>{
+      const addItemHundeler = (event) => {
             event.preventDefault()
             const suplerName = suplerNameRef.current.value
             const name = nameRef.current.value
@@ -18,7 +19,22 @@ const AddItem = () => {
             const img = urlRef.current.value
             const description = descriptionRef.current.value
 
-            console.log(suplerName , name , price , quentity , img , description);
+            console.log(suplerName, name, price, quentity, img, description);
+
+            fetch('http://localhost:5000/product', {
+                  method: 'POST',
+                  body: JSON.stringify({
+                   name , img , price , quentity , description , suplerName
+                  }),
+                  headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                  },
+                })
+                  .then((response) => response.json())
+                  .then((json) => {
+                        toast(json.success)
+                        event.target.reset();
+                  });
       }
 
 
@@ -29,16 +45,16 @@ const AddItem = () => {
                               <h3>Please Add a new Item</h3>
                               <form onSubmit={addItemHundeler} >
                                     <div className="addItem-grup">
-                                          <input ref={suplerNameRef} className='input-shadow' placeholder='Supler Name' type="Text" name="" id="" />
+                                          <input ref={suplerNameRef} className='input-shadow' placeholder='Supler Name' type="Text" name="" id="" required/>
                                           <br />
-                                          <input ref={nameRef} className='input-shadow' placeholder='product Name' type="text" name="name" id="" />
+                                          <input ref={nameRef} className='input-shadow' placeholder='product Name' type="text" name="name" id=""  required />
                                           <br />
-                                          <input ref={priceRef} className='input-shadow' placeholder='Price' type="number" name="number" id="" />
+                                          <input ref={priceRef} className='input-shadow' placeholder='Price' type="number" name="number" id=""  required />
                                           <br />
-                                          <input ref={quentityRef} className='input-shadow' placeholder='Quentity' type="number" name="" id="" /><br />
-                                          <input ref={urlRef} className='input-shadow' placeholder='Picture Url' type="text" name="" id="" />
+                                          <input ref={quentityRef} className='input-shadow' placeholder='Quentity' type="number" name="" id=""  required /><br />
+                                          <input ref={urlRef} className='input-shadow' placeholder='Picture Url' type="text" name="" id=""  required />
                                           <br />
-                                          <textarea ref={descriptionRef} className='input-shadow' placeholder='Description' type="" name="" id="" />
+                                          <textarea ref={descriptionRef} className='input-shadow' placeholder='Description' type="" name="" id=""  required />
                                           <br />
 
                                           {/* {erorMassage || <p className='text-danger'>{errors}</p>} */}
