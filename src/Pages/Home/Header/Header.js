@@ -32,7 +32,7 @@ const Header = () => {
                                           <Nav.Link as={Link} to='/myItem' >My items</Nav.Link>
 
                                           {
-                                                user ? <button onClick={logout}>Logout</button> :    <Nav.Link as={Link} to='/login' >Login</Nav.Link>
+                                                user ? <button className='logOutbtn' onClick={logout}>Logout</button> :    <Nav.Link as={Link} to='/login' >Login</Nav.Link>
                                           }
                                           
                                        

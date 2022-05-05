@@ -1,7 +1,7 @@
 import { wait } from '@testing-library/user-event/dist/utils';
 import React, { useRef } from 'react';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useRoutes } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -30,6 +30,10 @@ const Login = () => {
             const password = passwordRef.current.value
             await signInWithEmailAndPassword(email, password)
            
+
+
+
+
       }
 
       const [sendPasswordResetEmail, sending, errors] = useSendPasswordResetEmail(
@@ -58,9 +62,27 @@ const Login = () => {
       }
 
       if (user) {
-     
-            navigate(from, { replace: true });
-            
+            const email = emailRef.current.value
+            fetch('http://localhost:5000/login', {
+                  method: 'POST',
+                  body: JSON.stringify({
+                        email: user.email
+
+                  }),
+                  headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                  },
+            })
+                  .then((response) => response.json())
+                  .then((json) => {
+                        localStorage.setItem('accessToken', json.accessToken)
+                        console.log(json);
+                        navigate(from, { replace: true });
+
+
+                  });
+
+
       }
       return (
             <div className="login-section my-4">

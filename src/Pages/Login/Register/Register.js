@@ -57,23 +57,7 @@ const Register = () => {
 
       }
       if (user) {
-            fetch('http://localhost:5000/login', {
-                  method: 'POST',
-                  body: JSON.stringify({
-                        email: user.email
-
-                  }),
-                  headers: {
-                        'Content-type': 'application/json; charset=UTF-8',
-                  },
-            })
-                  .then((response) => response.json())
-                  .then((json) => {
-                        localStorage.setItem('accessToken' , json.accessToken)
-                        console.log(json);
-                        navigate('/')
-                 
-                  });
+            navigate('/')
             
             console.log(user);
       }

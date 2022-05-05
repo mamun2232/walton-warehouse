@@ -1,21 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import useProduct from '../../CustomHok/useProduct';
+import { AiFillDelete } from 'react-icons/ai';
+import './ManageItem.css'
+import { toast } from 'react-toastify';
 
 const ManageItem = () => {
       const navigate = useNavigate()
 
-      const newAddItemHundeler = () =>{
+      const newAddItemHundeler = () => {
             navigate('/addItem')
       }
 
+
+
       const [products, setProduct] = useProduct()
+      // const [deletes , setDelete] = useState('')
+      const deteleItem = (id) => {
+           
+            const delet = window.confirm('are you sure delete?')
+            if(delet){
+                  fetch(`http://localhost:5000/product/${id}`, {
+                        method: 'DELETE',
+                  })
+                  .then(res => res.json())
+                  .then(data => {
+                        if(data.deletedCount > 0){
+                              const remaing = products.filter(product => product._id !== id)
+                              setProduct(remaing)
+                              toast('Delete SuccessFul')
+                        }
+                  })
+
+            }
+           
+
+      }
       console.log(products);
       return (
             <div className="manage-itemlist mt-3">
                   <div className="container">
-                        <div className="all-item">
+                        <div className="all-item text-center">
                               <h3 className='text-center'>All Manage Item</h3>
                               <Table className='bg-light' striped bordered hover responsive>
                                     <thead>
@@ -40,7 +66,7 @@ const ManageItem = () => {
                                                             <td>{product.email}</td>
                                                             <td>{product.price}</td>
                                                             <td>{product.quentity}</td>
-                                                            <td>delect</td>
+                                                            <td><span onClick={() => deteleItem(product._id)} className='deletbtn'><AiFillDelete></AiFillDelete></span></td>
                                                       </tr>
                                                 )
 

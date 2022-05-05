@@ -20,3 +20,13 @@
   /* .navbar-light .navbar-toggler-icon {
       background-image: url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 0.55%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e);
   } */
+
+  .logOutbtn{
+      border: none;
+      background-color: navy;
+      color: white;
+      padding: 0px 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-left: 10px;
+  }
