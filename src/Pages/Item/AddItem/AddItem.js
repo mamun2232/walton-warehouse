@@ -29,12 +29,13 @@ const AddItem = () => {
             fetch('http://localhost:5000/productOrder', {
                   method: 'POST',
                   body: JSON.stringify({
-                   name , img , price , quentity , description , suplerName , email
+                        name, img, price, quentity, description, suplerName, email
                   }),
                   headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
+                        'authorization': `${email} ${localStorage.getItem('accessToken')}`,
+                        'Content-type': 'application/json; charset=UTF-8',
                   },
-                })
+            })
                   .then((response) => response.json())
                   .then((json) => {
                         toast(json.success)
@@ -50,18 +51,18 @@ const AddItem = () => {
                               <h3>Please Add a new Item</h3>
                               <form onSubmit={addItemHundeler} >
                                     <div className="addItem-grup">
-                                          <input value={user.displayName} readOnly ref={suplerNameRef} className='input-shadow' placeholder='Supler Name' type="Text" name="" id="" required/>
+                                          <input value={user.displayName} readOnly ref={suplerNameRef} className='input-shadow' placeholder='Supler Name' type="Text" name="" id="" required />
                                           <br />
-                                          <input ref={emailRef} className='input-shadow' placeholder='' value={user.email} readOnly type="email" name="" id="" required/>
+                                          <input ref={emailRef} className='input-shadow' placeholder='' value={user.email} readOnly type="email" name="" id="" required />
                                           <br />
-                                          <input ref={nameRef} className='input-shadow' placeholder='product Name' type="text" name="name" id=""  required />
+                                          <input ref={nameRef} className='input-shadow' placeholder='product Name' type="text" name="name" id="" required />
                                           <br />
-                                          <input ref={priceRef} className='input-shadow' placeholder='Price' type="number" name="number" id=""  required />
+                                          <input ref={priceRef} className='input-shadow' placeholder='Price' type="number" name="number" id="" required />
                                           <br />
-                                          <input ref={quentityRef} className='input-shadow' placeholder='Quentity' type="number" name="" id=""  required /><br />
-                                          <input ref={urlRef} className='input-shadow' placeholder='Picture Url' type="text" name="" id=""  required />
+                                          <input ref={quentityRef} className='input-shadow' placeholder='Quentity' type="number" name="" id="" required /><br />
+                                          <input ref={urlRef} className='input-shadow' placeholder='Picture Url' type="text" name="" id="" required />
                                           <br />
-                                          <textarea ref={descriptionRef} className='input-shadow' placeholder='Description' type="" name="" id=""  required />
+                                          <textarea ref={descriptionRef} className='input-shadow' placeholder='Description' type="" name="" id="" required />
                                           <br />
 
                                           {/* {erorMassage || <p className='text-danger'>{errors}</p>} */}

@@ -28,12 +28,13 @@ const Login = () => {
             event.preventDefault()
             const email = emailRef.current.value
             const password = passwordRef.current.value
-           await signInWithEmailAndPassword(email, password)
+            await signInWithEmailAndPassword(email, password)
+           
       }
 
       const [sendPasswordResetEmail, sending, errors] = useSendPasswordResetEmail(
             auth
-          );
+      );
 
       //      porgate password 
       const forgatePassword = () => {
@@ -44,7 +45,7 @@ const Login = () => {
 
 
             }
-            else{
+            else {
                   toast('Please Provite Email')
             }
 
@@ -56,8 +57,10 @@ const Login = () => {
 
       }
 
-      if(user){
-            navigate(from, { replace: true })
+      if (user) {
+     
+            navigate(from, { replace: true });
+            
       }
       return (
             <div className="login-section my-4">
@@ -76,14 +79,14 @@ const Login = () => {
                                     <div className="login-from">
                                           <div>
                                                 <h3 className='text-center my-5'>Login to walton</h3>
-                                               {/* <div className='text-center'>
+                                                {/* <div className='text-center'>
                                                <img  src={logo} alt="" />
                                                </div> */}
                                                 <form onSubmit={loginFromHundeler}>
                                                       <div className="input-grups">
                                                             <input ref={emailRef} className='input-shadow' type="email" name="email" id="" />
                                                             <br />
-                                                            <input ref={passwordRef}  className='input-shadow' type="password" name="" id="" />
+                                                            <input ref={passwordRef} className='input-shadow' type="password" name="" id="" />
                                                             <br />
                                                             <input className='submit-btn' type="submit" value="Login" />
                                                             {erorMassage}

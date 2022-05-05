@@ -4,7 +4,7 @@ import Product from '../Product/Product';
 import './Products.css'
 const Products = () => {
       const [products , setProduct] = useProduct()
-      console.log(products);
+     
       return (
             <div className="container">
                   <h3 className='text-center my-3'>Our Inventory Items</h3>
