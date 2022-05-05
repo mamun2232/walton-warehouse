@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 import './AddItem.css'
 
 const AddItem = () => {
@@ -9,6 +11,8 @@ const AddItem = () => {
       const quentityRef = useRef('')
       const urlRef = useRef('')
       const descriptionRef = useRef('')
+      const emailRef = useRef('')
+      const [user] = useAuthState(auth)
 
       const addItemHundeler = (event) => {
             event.preventDefault()
@@ -17,14 +21,15 @@ const AddItem = () => {
             const price = priceRef.current.value
             const quentity = quentityRef.current.value
             const img = urlRef.current.value
+            const email = emailRef.current.value
             const description = descriptionRef.current.value
 
             console.log(suplerName, name, price, quentity, img, description);
 
-            fetch('http://localhost:5000/product', {
+            fetch('http://localhost:5000/productOrder', {
                   method: 'POST',
                   body: JSON.stringify({
-                   name , img , price , quentity , description , suplerName
+                   name , img , price , quentity , description , suplerName , email
                   }),
                   headers: {
                     'Content-type': 'application/json; charset=UTF-8',
@@ -45,7 +50,9 @@ const AddItem = () => {
                               <h3>Please Add a new Item</h3>
                               <form onSubmit={addItemHundeler} >
                                     <div className="addItem-grup">
-                                          <input ref={suplerNameRef} className='input-shadow' placeholder='Supler Name' type="Text" name="" id="" required/>
+                                          <input value={user.displayName} readOnly ref={suplerNameRef} className='input-shadow' placeholder='Supler Name' type="Text" name="" id="" required/>
+                                          <br />
+                                          <input ref={emailRef} className='input-shadow' placeholder='' value={user.email} readOnly type="email" name="" id="" required/>
                                           <br />
                                           <input ref={nameRef} className='input-shadow' placeholder='product Name' type="text" name="name" id=""  required />
                                           <br />

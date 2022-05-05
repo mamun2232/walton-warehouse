@@ -22,7 +22,7 @@ const ManageItem = () => {
                                           <tr className=''>
 
                                                 <th className='w-25'>Product Name</th>
-                                                <th className=''>Supler Name</th>
+                                                <th className=''>Email ID</th>
                                                 <th>Price</th>
                                                 <th>Quentity</th>
 
@@ -37,7 +37,7 @@ const ManageItem = () => {
                                                       <tr>
 
                                                             <td>{product.name}</td>
-                                                            <td>{product.suplerName}</td>
+                                                            <td>{product.email}</td>
                                                             <td>{product.price}</td>
                                                             <td>{product.quentity}</td>
                                                             <td>delect</td>

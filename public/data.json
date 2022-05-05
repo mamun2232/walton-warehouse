@@ -5,7 +5,8 @@
             "price": "35000",
             "quentity": 10,
             "description": "Smart Walton Freaze",
-            "suplerName": "Mohammad Mamun"
+            "suplerName": "Mohammad Mamun" ,
+            "email": "juborajvai@gmail.com"
       },
       {
             "name": "walton Tv ",
@@ -13,7 +14,8 @@
             "price": "30000",
             "quentity": 10,
             "description": "Smart Walton LED Tv",
-            "suplerName": "Mohammad Mamun"
+            "suplerName": "Mohammad Mamun",
+            "email": "juborajvai@gmail.com"
             
       },
       {
@@ -22,7 +24,8 @@
             "price": "18000",
             "quentity": 10,
             "description": "Smart Walton Washing Messine",
-            "suplerName": "Mohammad Mamun"
+            "suplerName": "Mohammad Mamun",
+            "email": "juborajvai@gmail.com"
       },
       {
             "name": "walton Laptop ",
@@ -30,7 +33,8 @@
             "price": "44000",
             "quentity": 10,
             "description": "Hot Walton Laptop",
-            "suplerName": "Mohammad Mamun"
+            "suplerName": "Mohammad Mamun",
+            "email": "juborajvai@gmail.com"
       },
       {
             "name": "walton Mobile",
@@ -38,7 +42,8 @@
             "price": "15000",
             "quentity": 10,
             "description": "Smart Walton Phone",
-            "suplerName": "Mohammad Mamun"
+            "suplerName": "Mohammad Mamun",
+            "email": "juborajvai@gmail.com"
       },
       {
             "name": "walton microwaven",
@@ -46,6 +51,7 @@
             "price": "22000",
             "quentity": 10,
             "description": "Smart Walton microwave ",
-            "suplerName": "Mohammad Mamun"
+            "suplerName": "Mohammad Mamun",
+            "email": "juborajvai@gmail.com"
       }
 ]
