@@ -18,7 +18,7 @@ import RequareAuth from './Pages/Login/RequareAuth/RequareAuth';
 import Footer from './Pages/Home/Footer/Footer';
 function App() {
   return (
-    <div className="Apps">
+    <div className="Apps bg-light">
       <Header></Header>
 
       <Routes>

@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import useProduct from '../../CustomHok/useProduct';
 import Product from '../Product/Product';
 import './Products.css'
+
+import { FiArrowRightCircle } from 'react-icons/fi';
 const Products = () => {
       const [products , setProduct] = useProduct()
       const navigate = useNavigate()
@@ -11,7 +13,7 @@ const Products = () => {
      
       return (
             <div className="container">
-                  <h3 className='text-center my-5'>Our Inventory Items</h3>
+                  <h3 className='text-center my-5 primary-text'>OUR INVENTORY ITEMS</h3>
                   <div className="products-section">
                         {
                               items.map(product => <Product
@@ -26,7 +28,7 @@ const Products = () => {
                         }
                   </div>
                   <div className='text-end my-3'>
-                  <button onClick={() => navigate('/manageItem')} className='primary-btn'>All Manage Item</button>
+                  <button onClick={() => navigate('/manageItem')} className='primary-btn'>All Manage Item <FiArrowRightCircle className='mx-1'></FiArrowRightCircle></button>
                   </div>
             </div>
       );

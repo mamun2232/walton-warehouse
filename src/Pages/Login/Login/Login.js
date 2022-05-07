@@ -89,20 +89,20 @@ const Login = () => {
                   <div className="container">
                         <div className="row">
                               <div className="col-lg-5">
-                                    <div className="login-massage h-100 bg-light">
+                                    <div className="login-massage h-100 bg-white">
                                   
                                           <div className='text-center'>
                                           
-                                                <h2>Hello, Friend</h2>
-                                                <p>Enter parsinal Details and start Jurny with us</p>
-                                                <button onClick={registerHundeler} className='primary-btn'>Signup</button>
+                                                <h2 className='primary-text'>Hello, Friend</h2>
+                                                <p className='read-text'>Enter parsinal Details and start Jurny with us</p>
+                                                <button onClick={registerHundeler} className='primary-btn'>Register</button>
                                           </div>
                                     </div>
                               </div>
                               <div className="col-lg-7">
-                                    <div className="login-from">
+                                    <div className="login-from bg-white">
                                           <div>
-                                                <h3 className='text-center my-5'>Login to walton</h3>
+                                                <h3 className='text-center my-5 primary-text'>Login to walton</h3>
                                                 
                                                 <form onSubmit={loginFromHundeler}>
                                                       <div className="input-grups">

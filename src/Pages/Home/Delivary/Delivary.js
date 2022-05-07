@@ -11,26 +11,26 @@ const Delivary = () => {
                         <div className="delevari text-center">
                               <div className="row">
                                     <div className="col-lg-4">
-                                          <div className="item border p-3">
+                                          <div className="item border p-3 bg-white">
                                                 <span ><FaBeer></FaBeer></span>
-                                                <h5 className='my-2'>WORLDWIDE DELIVERY</h5>
-                                                <p>We work with the biggest delivery networks. It doesn't matter where in the world you are.
+                                                <h5 className='my-2 primary-text'>WORLDWIDE DELIVERY</h5>
+                                                <p className='read-text'>We work with the biggest delivery networks. It doesn't matter where in the world you are.
                                                 </p>
                                           </div>
                                     </div>
                                     <div className="col-lg-4">
-                                          <div className="item border p-3">
+                                          <div className="item border p-3 bg-white">
                                                 <span><FaBus></FaBus></span>
-                                                <h5 className='my-2'>FREE SHIPPING</h5>
-                                                <p >Stop wondering about shipping costs, what you see is what you pay.
+                                                <h5 className='my-2 primary-text'>FREE SHIPPING</h5>
+                                                <p className='read-text'>Stop wondering about shipping costs, what you see is what you pay.
                                                 </p>
                                           </div>
                                     </div>
                                     <div className="col-lg-4">
-                                          <div className="item border p-3">
+                                          <div className="item border bg-white p-3">
                                           <span><BsWallet2></BsWallet2></span>
-                                          <h5 className='my-2'>MONEY BACK GUARANTEE</h5>
-                                          <p>Got a problem with the product? Don't worry, we have a 30 day money back guarantee.</p>
+                                          <h5 className='my-2 primary-text'>MONEY BACK GUARANTEE</h5>
+                                          <p className='read-text'>Got a problem with the product? Don't worry, we have a 30 day money back guarantee.</p>
 
                                           </div>
                                          

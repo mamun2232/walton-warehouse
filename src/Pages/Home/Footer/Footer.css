@@ -1,24 +1,42 @@
 .suctomer-service h5{
-      color: #164b9e;
+      /* color: #164b9e; */
+      color: #fcfcfc;
       font-size: 22px;
       margin-bottom: 10px;
 }
 .suctomer-service p{
       margin: 6px 0px;
       font-size: 17px;
-      color: rgb(17, 2, 2);
+      /* color: rgb(17, 2, 2); */
       font-weight: 400;
+      color: #e7e1e1;
+     
 
 }
 
 hr{
-      color: #164b9e;
+      /* color: #164b9e; */
+      color: #fcfcfc;
      
 }
 
 .footer-text{
-      color: #164b9e;
+      /* color: #164b9e; */
+      /* color: black; */
+      color: #fcfcfc;
       font-weight: 400;
-      font-size: 20px;
+      font-size: 18px;
 
+}
+
+.footer-section{
+      background-color: #232323;
+}
+
+.primary-text{
+      color: #282828;
+}
+
+.read-text{
+      color: #444444;
 }

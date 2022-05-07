@@ -3,6 +3,8 @@ import { Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Product.css'
 
+import { FiArrowRightCircle } from 'react-icons/fi';
+
 const Product = ({ product }) => {
       const navigate = useNavigate()
       const {_id , name, img, price, quentity, description } = product
@@ -31,7 +33,7 @@ const Product = ({ product }) => {
                                     <Card.Img variant="top" src={img} />
                                     </div>
                                     <Card.Body className='text-center info'>
-                                          <h4>{name}</h4>
+                                          <h4 className='primary-text'>{name}</h4>
                                         
                                           <Card.Text>
                                           <h4 className='price'>BDT ${price}</h4>
@@ -40,7 +42,7 @@ const Product = ({ product }) => {
                                           
                                     </Card.Body>
                                  
-                                     <button onClick={() => productDetils(_id)} className='primary-btn'>Update</button> 
+                                     <button onClick={() => productDetils(_id)} className='primary-btn'>Update <FiArrowRightCircle className='mx-2'></FiArrowRightCircle></button> 
                                   
                                   
                                </Card>

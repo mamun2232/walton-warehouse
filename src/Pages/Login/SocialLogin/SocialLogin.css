@@ -2,7 +2,7 @@
       display: flex;
 }
 .login{
-      background-color: rgb(21, 115, 215);
+      background-color:  #164b9e;
       height: 1px;
       width: 100%;
       margin-top: 13px;
@@ -15,8 +15,25 @@
 .social-icon{
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 40px;
 }
 .icon{
-      font-size: 35px;
+      font-size: 30px;
       margin: 0px 13px;
 }
+
+.google{
+      border: 1px solid lavender ;
+      width: 100%;
+      text-align: center;
+      padding: 8px 0px;
+      border-radius: 15px;
+      cursor: pointer;
+      
+}
+.google span{
+      font-size: 18px;
+      
+}
+

@@ -13,7 +13,7 @@ const Header = () => {
       }
       console.log(user);
       return (
-            <div className="nav-section bg-light sticky-top">
+            <div className="nav-section bg-white sticky-top">
                   <Navbar collapseOnSelect expand="lg" >
                         <Container>
                               <Navbar.Brand as={Link} to='/'>

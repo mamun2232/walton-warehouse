@@ -5,7 +5,7 @@ const NewBanner = () => {
       return (
            <div className="new-banner-section my-5">
                  <div className="container">
-                 <h3 className='my-2'>CAMMING UP SOON</h3>
+                 <h3 className='my-2 primary-text'>CAMMING UP SOON</h3>
                  </div>
                  <div className="new-banner">
                       

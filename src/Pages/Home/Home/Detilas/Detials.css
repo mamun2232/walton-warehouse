@@ -1,6 +1,7 @@
 .details-img img{
-      width: 300px;
+      width: 450px;
       height: 100%;
+      
 }
 
 .factory img{
@@ -8,7 +9,40 @@
      
 }
 
+.description{
+      display: flex;
+      
+}
+.detail-info{
+      margin-left: 50px;
+}
+
+.detail-info p{
+      font-size: 20px;
+      margin: 5px 0px;
+      /* color: rgb(34, 33, 33); */
+      
+}
 /* .input-grup .quentity-filed{
       width: 370px;
       height: 35px;
 } */
+
+@media screen and (max-width: 570px) {
+      .description{
+            display: initial;
+      }
+
+      .details-img img{
+            width: 350px;
+            height: 100%;
+            
+      }
+
+      .detail-info{
+            margin-left: 0px;
+            margin-top: 20px;
+      }
+
+
+}

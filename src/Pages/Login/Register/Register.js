@@ -66,9 +66,9 @@ const Register = () => {
                   <div className="container">
                         <div className="row">
                               <div className="col-lg-7">
-                                    <div className="login-from">
+                                    <div className="login-from bg-white">
                                           <div>
-                                                <h3 className='text-center my-5'>Create Account</h3>
+                                                <h3 className='text-center my-5 primary-text'>Create Account</h3>
                                                 <form onSubmit={fromsubmitHendeler}>
                                                       <div className="input-grups">
                                                             <input ref={nameRef} className='input-shadow' placeholder='Name' type="text" name="name" id="" />
@@ -82,9 +82,9 @@ const Register = () => {
 
                                                             <div className='mt-2'>
                                                                   <input onClick={() => setAgree(!agree)} type="checkbox" name="chack" id="" />
-                                                                  <label className={`px-2 ${agree ? '' : 'text-danger'}`} htmlFor="">Accept Gym Center Terms and Conditions</label>
+                                                                  <label className={`px-2 ${agree ? '' : 'text-danger'}`} htmlFor="">Accept Walton Terms and Conditions</label>
                                                             </div>
-                                                            <input disabled={!agree}  className='primary-btn' type="submit" value="Login" />
+                                                            <input disabled={!agree}  className='primary-btn' type="submit" value="Register" />
 
 
 
@@ -97,10 +97,10 @@ const Register = () => {
                                     </div>
                               </div>
                               <div className="col-lg-5">
-                                    <div className="login-massage h-100 bg-light">
+                                    <div className="login-massage h-100 bg-white">
                                           <div className='text-center'>
-                                                <h3>Welcome Back!</h3>
-                                                <p>To keep connected with us Please Login with personal Email</p>
+                                                <h3 className='primary-text'>Welcome Back!</h3>
+                                                <p className='read-text'>To keep connected with us Please Login with personal Email</p>
                                                 <button onClick={loginHundeler} className='primary-btn'>Login</button>
                                           </div>
                                     </div>

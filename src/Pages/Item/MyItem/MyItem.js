@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import { AiFillDelete } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 const MyItem = () => {
       const [user] = useAuthState(auth)
       const [myOrders, setMyorder] = useState([])
+      const navigate = useNavigate()
       useEffect(() => {
             const email = user.email
             const url = `http://localhost:5000/productOrder?email=${email}`
@@ -14,8 +18,30 @@ const MyItem = () => {
                   .then(res => res.json())
                   .then(data => setMyorder(data))
       }, [])
+
+
+      const deteleItem = (id) => {
+           
+            const delet = window.confirm('are you sure delete?')
+            if(delet){
+                  fetch(`http://localhost:5000/product/${id}`, {
+                        method: 'DELETE',
+                  })
+                  .then(res => res.json())
+                  .then(data => {
+                        if(data.deletedCount > 0){
+                              const remaing = myOrders.filter(product => product._id !== id)
+                              setMyorder(remaing)
+                              toast('Delete SuccessFul')
+                        }
+                  })
+
+            }
+           
+
+      }
       return (
-            <div className="manage-itemlist mt-3">
+            <div className="manage-itemlist h-100 mt-3">
                   <div className="container">
                         <div className="all-item">
                               <h3 className='text-center'>My Added Item</h3>
@@ -26,7 +52,9 @@ const MyItem = () => {
                                                 <th className='w-25'>Product Name</th>
                                                 <th>Email ID</th>
                                                 <th className='w-25'>Name</th>
+                                                <th>Price</th>
                                                 <th>Quentity</th>
+                                               
 
                                                 <th>Action</th>
                                           </tr>
@@ -40,10 +68,12 @@ const MyItem = () => {
 
                                                             <td>{myOrder.name}</td>
                                                             <td>{myOrder.email}</td>
-                                                            <td>{myOrder.name}</td>
+                                                            <td>{myOrder.suplerName}</td>
                                                             <td>{myOrder.price}</td>
                                                             <td>{myOrder.quentity}</td>
-                                                            <td>delect</td>
+                                                          
+                                                            
+                                                            <td><span onClick={() => deteleItem(myOrder._id)} className='deletbtn'><AiFillDelete></AiFillDelete></span></td>
                                                       </tr>
                                                 )
 
@@ -52,8 +82,12 @@ const MyItem = () => {
 
                                     </tbody>
                               </Table>
+                          
+
+                              
                               <div className='text-end'>
                                     {/* <button onClick={newAddItemHundeler} className='btn btn-primary'>Add New Item</button> */}
+                                    
                               </div>
                         </div>
                   </div>

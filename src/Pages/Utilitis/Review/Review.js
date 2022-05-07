@@ -8,7 +8,7 @@ const Review = () => {
                   <div className="container">
                         <div className="row">
                               <div className="col-lg-6">
-                                    <h3 className='mb-3'>Why buy from us</h3>
+                                    <h3 className='mb-3 primary-text'>WHY BUY FROM US</h3>
                                     <div className="question mb-4">
                                           <Accordion defaultActiveKey="0">
                                                 <Accordion.Item eventKey="0">
@@ -52,7 +52,7 @@ const Review = () => {
 
                               </div>
                               <div className="col-lg-6">
-                              <h3 className='mb-3'>Our Warehouse</h3>
+                              <h3 className='mb-3 primary-text'>OUR WAREHOUSE</h3>
                                     <div className="factory">
                                           
                                           <img className='img-fluid' src={warehouse} alt="" />
