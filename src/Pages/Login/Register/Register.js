@@ -84,7 +84,7 @@ const Register = () => {
                                                                   <input onClick={() => setAgree(!agree)} type="checkbox" name="chack" id="" />
                                                                   <label className={`px-2 ${agree ? '' : 'text-danger'}`} htmlFor="">Accept Gym Center Terms and Conditions</label>
                                                             </div>
-                                                            <input disabled={!agree}  className='submit-btn' type="submit" value="Login" />
+                                                            <input disabled={!agree}  className='primary-btn' type="submit" value="Login" />
 
 
 
@@ -101,7 +101,7 @@ const Register = () => {
                                           <div className='text-center'>
                                                 <h3>Welcome Back!</h3>
                                                 <p>To keep connected with us Please Login with personal Email</p>
-                                                <button onClick={loginHundeler} className='btn btn-primary'>Login</button>
+                                                <button onClick={loginHundeler} className='primary-btn'>Login</button>
                                           </div>
                                     </div>
                               </div>

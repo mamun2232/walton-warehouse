@@ -3,6 +3,11 @@
       height: 100%;
 }
 
+.factory img{
+      border-radius: 10px;
+     
+}
+
 /* .input-grup .quentity-filed{
       width: 370px;
       height: 35px;

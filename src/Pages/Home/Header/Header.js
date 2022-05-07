@@ -13,11 +13,11 @@ const Header = () => {
       }
       console.log(user);
       return (
-            <div className="nav-section bg-light">
+            <div className="nav-section bg-light sticky-top">
                   <Navbar collapseOnSelect expand="lg" >
                         <Container>
                               <Navbar.Brand as={Link} to='/'>
-                                    walton Warehouse
+                                    <img src={picture} alt="" />
                                    
                               </Navbar.Brand>
                               <Navbar.Toggle aria-controls="responsive-navbar-nav" />

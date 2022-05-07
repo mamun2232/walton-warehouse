@@ -48,7 +48,7 @@ const AddItem = () => {
             <div className="add-item-section">
                   <div className="container">
                         <div className="add-item text-center">
-                              <h3>Please Add a new Item</h3>
+                              <h3>Please add a new item</h3>
                               <form onSubmit={addItemHundeler} >
                                     <div className="addItem-grup">
                                           <input value={user.displayName} readOnly ref={suplerNameRef} className='input-shadow' placeholder='Supler Name' type="Text" name="" id="" required />
@@ -68,7 +68,7 @@ const AddItem = () => {
                                           {/* {erorMassage || <p className='text-danger'>{errors}</p>} */}
 
 
-                                          <input className='submit-btn' type="submit" value="submit" />
+                                          <input className='primary-btn' type="submit" value="submit" />
 
 
 

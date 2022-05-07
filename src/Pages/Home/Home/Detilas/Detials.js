@@ -87,7 +87,7 @@ const Detials = () => {
             <div className="detils-section my-3 bg-light">
                   <div className="container">
                         <div className="row">
-                              <div className="col-lg-7">
+                              <div className="col-lg-8">
                                     <div className="product-detilas">
 
                                           <Card className=' bg-light'>
@@ -99,12 +99,21 @@ const Detials = () => {
                                                             </div>
                                                             <div className='ms-3 mt-5'>
                                                                   <Card.Title>{product.name}</Card.Title>
-                                                                  <p>{product.description}</p>
+                                                                 
+                                                                  
+                                                                  
                                                                   <Card.Text>
-                                                                        <p>Price: BDT{product.price}</p>
+                                                                  <p>{product.model}</p>
+                                                                  <p>{product.ram}</p>
+                                                                  <p>{product.hdd}</p>
+                                                                  <p>{product.display}</p>
+                                                                        
                                                                         <p>Quentity: {product.quentity}</p>
+                                                                        <p> {product.prosesor}</p>
+                                                                        <p> {product.description}</p>
 
                                                                         <p>Sypler Name: {product.suplerName}</p>
+                                                                        
 
                                                                   </Card.Text>
                                                                   <div className=' mt-5'>
@@ -128,7 +137,7 @@ const Detials = () => {
 
 
                               </div>
-                              <div className="col-lg-5">
+                              <div className="col-lg-4">
                                     <div className="quentity-add-section">
                                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ullam?</p>
 

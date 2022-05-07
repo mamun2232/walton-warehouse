@@ -1,5 +1,13 @@
-.product-section img{
+.picture img{
       width: 250px;
       height: 250px;
 
+}
+.info{
+      height: 150px;
+}
+
+.price{
+      color: #164b9e;
+      font-weight: 700;
 }

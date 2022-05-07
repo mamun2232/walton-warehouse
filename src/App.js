@@ -15,6 +15,7 @@ import Detials from './Pages/Home/Home/Detilas/Detials';
 import { ToastContainer, toast } from 'react-toastify';
 import Register from './Pages/Login/Register/Register';
 import RequareAuth from './Pages/Login/RequareAuth/RequareAuth';
+import Footer from './Pages/Home/Footer/Footer';
 function App() {
   return (
     <div className="Apps">
@@ -38,6 +39,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
+      <Footer></Footer>
 
     </div>
   );

@@ -23,10 +23,29 @@
 
   .logOutbtn{
       border: none;
-      background-color: navy;
+      /* background-color: navy; */
+      background-color: #164b9e;
       color: white;
       padding: 0px 10px;
       border-radius: 8px;
       font-weight: 600;
       margin-left: 10px;
   }
+
+  .primary-btn{
+    border: none;
+    /* background-color: navy; */
+    background-color: #164b9e;
+    color: white;
+    padding: 0px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+ 
+    padding: 10px 20px;
+
+  }
+  .nav-section img{
+      width: 200px;
+      height: 100%;
+  }
+ 

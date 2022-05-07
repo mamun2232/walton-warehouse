@@ -1,0 +1,22 @@
+.new-banner{
+      background-image: url('../../../Picture/banner-5.jpg');
+      background-size: cover;
+      height: 600px;
+      background-repeat: no-repeat;
+      
+      
+}
+
+
+@media screen and (max-width: 570px) {
+      .new-banner{
+            background-image: url('../../../Picture/banner-5.jpg');
+            background-size: cover;
+            
+            height: 200px;
+        
+            background-repeat: no-repeat;
+         
+            
+      }
+}

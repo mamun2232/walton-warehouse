@@ -3,3 +3,11 @@
       font-size: 25px;
       cursor: pointer;
 }
+th{
+      color: #164b9e;
+      font-size: 18px;
+}
+
+tbody, td, tfoot, th, thead, tr{
+      width: 0px !important;
+}

@@ -90,10 +90,12 @@ const Login = () => {
                         <div className="row">
                               <div className="col-lg-5">
                                     <div className="login-massage h-100 bg-light">
+                                  
                                           <div className='text-center'>
-                                                <h3>Hello , Friend</h3>
+                                          
+                                                <h2>Hello, Friend</h2>
                                                 <p>Enter parsinal Details and start Jurny with us</p>
-                                                <button onClick={registerHundeler} className='btn btn-primary'>Signup</button>
+                                                <button onClick={registerHundeler} className='primary-btn'>Signup</button>
                                           </div>
                                     </div>
                               </div>
@@ -101,9 +103,7 @@ const Login = () => {
                                     <div className="login-from">
                                           <div>
                                                 <h3 className='text-center my-5'>Login to walton</h3>
-                                                {/* <div className='text-center'>
-                                               <img  src={logo} alt="" />
-                                               </div> */}
+                                                
                                                 <form onSubmit={loginFromHundeler}>
                                                       <div className="input-grups">
                                                             <input ref={emailRef} className='input-shadow' type="email" name="email" id="" />
@@ -112,7 +112,7 @@ const Login = () => {
                                                             <br />
                                                             <input className='submit-btn' type="submit" value="Login" />
                                                             {erorMassage}
-                                                            <p onClick={forgatePassword} className='text-end mt-2'>forgate Password</p>
+                                                            <p onClick={forgatePassword} className='text-end mt-2 forgate'>forgate Password</p>
 
 
                                                       </div>

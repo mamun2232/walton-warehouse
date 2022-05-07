@@ -42,7 +42,7 @@ const ManageItem = () => {
             <div className="manage-itemlist mt-3">
                   <div className="container">
                         <div className="all-item text-center">
-                              <h3 className='text-center'>All Manage Item</h3>
+                              <h3 className='text-center my-3'>All Manage Items</h3>
                               <Table className='bg-light' striped bordered hover responsive>
                                     <thead>
                                           <tr className=''>
@@ -76,7 +76,7 @@ const ManageItem = () => {
                                     </tbody>
                               </Table>
                               <div className='text-end'>
-                                    <button onClick={newAddItemHundeler} className='btn btn-primary'>Add New Item</button>
+                                    <button onClick={newAddItemHundeler} className='primary-btn'>Add New Item</button>
                               </div>
                         </div>
                   </div>
