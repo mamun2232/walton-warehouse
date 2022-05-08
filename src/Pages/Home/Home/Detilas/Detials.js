@@ -19,7 +19,7 @@ const Detials = () => {
 
 
       useEffect(() => {
-            fetch(`http://localhost:5000/product/${id}`)
+            fetch(`https://secret-hamlet-95232.herokuapp.com/product/${id}`)
                   .then(res => res.json())
                   .then(data => setProduct(data))
 
@@ -31,7 +31,7 @@ const Detials = () => {
             const newQuentity = product.quentity - 1
 
             if (newQuentity > -1) {
-                  fetch(`http://localhost:5000/product/${id}`, {
+                  fetch(`https://secret-hamlet-95232.herokuapp.com/product/${id}`, {
                         method: 'PUT',
                         body: JSON.stringify({
                               newQuentity
@@ -62,7 +62,7 @@ const Detials = () => {
                   const newQuentity = parseInt(product.quentity) + parseInt(addedQuentity)
 
 
-                  fetch(`http://localhost:5000/products/${id}`, {
+                  fetch(`https://secret-hamlet-95232.herokuapp.com/products/${id}`, {
                         method: 'PUT',
                         body: JSON.stringify({
                               newQuentity
@@ -106,7 +106,7 @@ const Detials = () => {
                                                 <Card.Body className=''>
                                                       <div className='description'>
                                                             <div className="details-img">
-                                                                  <img src={product.img} alt="" />
+                                                                  <img className='img-fluid' src={product.img} alt="" />
                                                             </div>
                                                             <div className='detail-info'>
                                                                   <h4 className='primary-text'>{product.name}</h4>

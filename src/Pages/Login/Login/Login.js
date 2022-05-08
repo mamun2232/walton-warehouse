@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import logo from '../../../Picture/logo.png'
 import './Login.css'
+import Loading from '../../Utilitis/Loading/Loading';
 const Login = () => {
       const navigate = useNavigate()
       const emailRef = useRef('')
@@ -35,10 +36,12 @@ const Login = () => {
 
 
       }
+      
 
       const [sendPasswordResetEmail, sending, errors] = useSendPasswordResetEmail(
             auth
       );
+      
 
       //      porgate password 
       const forgatePassword = () => {
@@ -54,16 +57,20 @@ const Login = () => {
             }
 
       }
+     
 
       let erorMassage;
       if (error) {
             erorMassage = <p className='text-danger'>{error?.message}</p>
 
       }
+      
+      
 
       if (user) {
-            const email = emailRef.current.value
-            fetch('http://localhost:5000/login', {
+            const email = emailRef?.current?.value
+            console.log(email);
+            fetch('https://secret-hamlet-95232.herokuapp.com/login', {
                   method: 'POST',
                   body: JSON.stringify({
                         email: user.email
@@ -84,6 +91,11 @@ const Login = () => {
 
 
       }
+      if(loading){
+            return <Loading></Loading>
+     
+           }
+      
       return (
             <div className="login-section my-4">
                   <div className="container">
@@ -106,9 +118,9 @@ const Login = () => {
                                                 
                                                 <form onSubmit={loginFromHundeler}>
                                                       <div className="input-grups">
-                                                            <input ref={emailRef} className='input-shadow' type="email" name="email" id="" />
+                                                            <input placeholder='Email' ref={emailRef} className='input-shadow' type="email" name="email" id="" required />
                                                             <br />
-                                                            <input ref={passwordRef} className='input-shadow' type="password" name="" id="" />
+                                                            <input placeholder='Password' ref={passwordRef} className='input-shadow' type="password" name="" id="" required />
                                                             <br />
                                                             <input className='submit-btn' type="submit" value="Login" />
                                                             {erorMassage}

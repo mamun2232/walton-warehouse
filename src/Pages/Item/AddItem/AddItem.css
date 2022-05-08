@@ -27,3 +27,28 @@
       height: 90px;
 
 }
+
+
+@media screen and (max-width: 570px) {
+      .addItem-grup input:not([type=checkbox]){
+            border: 1px solid lavender;
+            width: 320px;
+            height: 42px;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 0px 10px;
+            margin-top: 15px;
+            
+            /* background-color: rgb(14, 130, 231); */
+      }
+      .addItem-grup textarea{
+            width: 320px;
+            height: 90px;
+           
+
+      }
+      .add-item{
+            padding: 15px 10px;
+
+      }
+}

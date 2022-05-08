@@ -16,6 +16,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Register from './Pages/Login/Register/Register';
 import RequareAuth from './Pages/Login/RequareAuth/RequareAuth';
 import Footer from './Pages/Home/Footer/Footer';
+import Blogs from './Pages/Home/Blogs/Blogs';
 function App() {
   return (
     <div className="Apps bg-light">
@@ -37,6 +38,7 @@ function App() {
         </RequareAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/blog' element={<Blogs></Blogs>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
       <Footer></Footer>

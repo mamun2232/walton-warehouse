@@ -32,7 +32,7 @@ const AddItem = () => {
 
             console.log(suplerName, name, price, quentity, img, description);
 
-            fetch('http://localhost:5000/productOrder', {
+            fetch('https://secret-hamlet-95232.herokuapp.com/productOrder', {
                   method: 'POST',
                   body: JSON.stringify({
                         name, img, price, quentity, description, suplerName, email
@@ -74,7 +74,7 @@ const AddItem = () => {
                                           {/* {erorMassage || <p className='text-danger'>{errors}</p>} */}
 
 
-                                          <input className='primary-btn' type="submit" value="submit" />
+                                          <input className='primary-btn' type="Submit" value="submit" />
 
 
 

@@ -4,6 +4,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { async } from '@firebase/util';
+import Loading from '../../Utilitis/Loading/Loading';
 
 const Register = () => {
       const navigate = useNavigate()
@@ -56,6 +57,10 @@ const Register = () => {
             erorMassage = <p className='text-danger'>{error?.message}</p>
 
       }
+
+      if(loading){
+            return <Loading></Loading>
+      }
       if (user) {
             navigate('/')
             
@@ -71,12 +76,12 @@ const Register = () => {
                                                 <h3 className='text-center my-5 primary-text'>Create Account</h3>
                                                 <form onSubmit={fromsubmitHendeler}>
                                                       <div className="input-grups">
-                                                            <input ref={nameRef} className='input-shadow' placeholder='Name' type="text" name="name" id="" />
+                                                            <input ref={nameRef} className='input-shadow' placeholder='Name' type="text" name="name" id="" required />
                                                             <br />
-                                                            <input ref={emailRef} className='input-shadow' placeholder='Email' type="email" name="email" id="" />
+                                                            <input ref={emailRef} className='input-shadow' placeholder='Email' type="email" name="email" id="" required />
                                                             <br />
-                                                            <input ref={passwordRef} className='input-shadow' placeholder='Password' type="password" name="password" id="" /><br />
-                                                            <input ref={conframPassRef} className='input-shadow' placeholder='Confrom Password' type="password" name="confromPassword" id="" />
+                                                            <input ref={passwordRef} className='input-shadow' placeholder='Password' type="password" name="password" id="" required /><br />
+                                                            <input ref={conframPassRef} className='input-shadow' placeholder='Confrom Password' type="password" name="confromPassword" id="" required />
                                                             <br />
                                                             {erorMassage || <p className='text-danger'>{errors}</p>}
 

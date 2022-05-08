@@ -12,7 +12,7 @@ const MyItem = () => {
       const navigate = useNavigate()
       useEffect(() => {
             const email = user.email
-            const url = `http://localhost:5000/productOrder?email=${email}`
+            const url = `https://secret-hamlet-95232.herokuapp.com/productOrder?email=${email}`
 
                   fetch(url)
                   .then(res => res.json())
@@ -24,7 +24,7 @@ const MyItem = () => {
            
             const delet = window.confirm('are you sure delete?')
             if(delet){
-                  fetch(`http://localhost:5000/product/${id}`, {
+                  fetch(`https://secret-hamlet-95232.herokuapp.com/product/${id}`, {
                         method: 'DELETE',
                   })
                   .then(res => res.json())

@@ -1,18 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Banner.css'
 
 
 const Banner = () => {
+      const navigate = useNavigate()
       return (
             <div className="banner-section">
                   <div className="container">
                         <div className="banner-title">
                               <div className="row">
                                     <div className="col-lg-6">
-                                          <h1 className='title'>SHAPE YOUR PARFECT BODY</h1>
-                                          <p className='my-3 title-text'>A healthy body is needed to have a good mind. And to keep this healthy body healthy all the time you need to exercise regularly.
+                                          <h1 className='title'>WALTON MY BRAND</h1>
+                                          <p className='my-3 title-text'>Walton air conditioners can help to make your body cool and mind fresh. It can cool down the temperature of your home by drawing out. 
                                           </p>
-                                          <button className='primary-btn '>Explore Now </button>
+                                          <button onClick={() => navigate('/blog')} className='primary-btn '>Read More</button>
                                     </div>
                               </div>
 

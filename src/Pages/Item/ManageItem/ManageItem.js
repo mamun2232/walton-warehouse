@@ -23,7 +23,7 @@ const ManageItem = () => {
            
             const delet = window.confirm('are you sure delete?')
             if(delet){
-                  fetch(`http://localhost:5000/product/${id}`, {
+                  fetch(`https://secret-hamlet-95232.herokuapp.com/product/${id}`, {
                         method: 'DELETE',
                   })
                   .then(res => res.json())
