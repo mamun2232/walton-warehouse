@@ -5,6 +5,7 @@ import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } fro
 import auth from '../../../firebase.init';
 import { async } from '@firebase/util';
 import Loading from '../../Utilitis/Loading/Loading';
+import PageTitle from '../../Utilitis/PageTitle/PageTitle';
 
 const Register = () => {
       const navigate = useNavigate()
@@ -68,6 +69,7 @@ const Register = () => {
       }
       return (
             <div className="register-section my-4">
+                   <PageTitle title='Register'></PageTitle>
                   <div className="container">
                         <div className="row">
                               <div className="col-lg-7">

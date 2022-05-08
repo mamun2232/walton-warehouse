@@ -10,6 +10,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { MdAdd } from 'react-icons/md';
 import { FiArrowRightCircle } from 'react-icons/fi';
 import {FiArrowLeftCircle } from 'react-icons/fi';
+import PageTitle from '../../../Utilitis/PageTitle/PageTitle';
 
 const Detials = () => {
       const { id } = useParams()
@@ -96,6 +97,7 @@ const Detials = () => {
 
       return (
             <div className="detils-section my-3">
+                   <PageTitle title='Details'></PageTitle>
                   <div className="container">
                         <div className="row">
                               <div className="col-lg-12">
@@ -105,10 +107,11 @@ const Detials = () => {
                                                 {/* <Card.Header as="h5">Our {product.name} Featured</Card.Header> */}
                                                 <Card.Body className=''>
                                                       <div className='description'>
-                                                            <div className="details-img">
+                                                            <div data-aos="fade-up"
+     data-aos-duration="3000" className="details-img">
                                                                   <img className='img-fluid' src={product.img} alt="" />
                                                             </div>
-                                                            <div className='detail-info'>
+                                                            <div  data-aos="zoom-in-left" className='detail-info'>
                                                                   <h4 className='primary-text'>{product.name}</h4>
 
 

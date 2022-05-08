@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import './AddItem.css'
 import { FiArrowRightCircle } from 'react-icons/fi';
 import {FiArrowLeftCircle } from 'react-icons/fi';
+import PageTitle from '../../Utilitis/PageTitle/PageTitle';
 
 const AddItem = () => {
       const suplerNameRef = useRef('')
@@ -52,6 +53,7 @@ const AddItem = () => {
 
       return (
             <div className="add-item-section my-3">
+                   <PageTitle title='Add Item'></PageTitle>
                   <div className="container">
                         <div className="add-item text-center">
                               <h3>Please add a new item</h3>

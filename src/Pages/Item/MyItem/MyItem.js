@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import { AiFillDelete } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import PageTitle from '../../Utilitis/PageTitle/PageTitle';
 
 const MyItem = () => {
       const [user] = useAuthState(auth)
@@ -42,6 +43,7 @@ const MyItem = () => {
       }
       return (
             <div className="manage-itemlist h-100 mt-3">
+                   <PageTitle title='My Item'></PageTitle>
                   <div className="container">
                         <div className="all-item">
                               <h3 className='text-center'>My Added Item</h3>

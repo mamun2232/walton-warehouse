@@ -8,6 +8,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import logo from '../../../Picture/logo.png'
 import './Login.css'
 import Loading from '../../Utilitis/Loading/Loading';
+import PageTitle from '../../Utilitis/PageTitle/PageTitle';
 const Login = () => {
       const navigate = useNavigate()
       const emailRef = useRef('')
@@ -98,6 +99,7 @@ const Login = () => {
       
       return (
             <div className="login-section my-4">
+                   <PageTitle title='Login'></PageTitle>
                   <div className="container">
                         <div className="row">
                               <div className="col-lg-5">

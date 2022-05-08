@@ -15,7 +15,9 @@ const Product = ({ product }) => {
            
       } 
       return (
-            <div className=" ">
+            <div data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" className=" ">
                   <div>
                   {/* <div className="product-section text-center">
                         <div className="product-img bg-white">

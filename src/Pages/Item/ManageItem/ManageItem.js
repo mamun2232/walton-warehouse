@@ -7,6 +7,7 @@ import './ManageItem.css'
 import { toast } from 'react-toastify';
 import { FiArrowRightCircle } from 'react-icons/fi';
 import {FiArrowLeftCircle } from 'react-icons/fi';
+import PageTitle from '../../Utilitis/PageTitle/PageTitle';
 
 const ManageItem = () => {
       const navigate = useNavigate()
@@ -42,6 +43,7 @@ const ManageItem = () => {
       console.log(products);
       return (
             <div className="manage-itemlist h-100 mt-3">
+                   <PageTitle title='Manage Item'></PageTitle>
                   <div className="container">
                         <div className="all-item text-center">
                               <h3 className='text-center my-3'>All MANAGE ITEM</h3>
