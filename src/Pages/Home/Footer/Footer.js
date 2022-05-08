@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="footer-section  py-5 mt-5">
                   <div className="container">
                         <div className="row">
-                              <div className="col-lg-3">
+                              <div className="col-lg-3 col-sm-6">
                                     <div className="suctomer-service mb-2">
                                           <h5>CUSTOMER SERVICE</h5>
                                           <p>Contact us</p>
@@ -17,7 +17,7 @@ const Footer = () => {
 
                                     </div>
                               </div>
-                              <div className="col-lg-3">
+                              <div className="col-lg-3 col-sm-6">
                                     <div className="suctomer-service mb-3">
                                           <h5>INFORMATION</h5>
                                           <p>About Us</p>
@@ -28,7 +28,7 @@ const Footer = () => {
 
                                     </div>
                               </div>
-                              <div className="col-lg-3">
+                              <div className="col-lg-3 col-sm-6">
                                     <div className="suctomer-service mb-3">
                                           <h5>ABOUT US</h5>
                                           <p>Who We Are ?</p>
@@ -39,7 +39,7 @@ const Footer = () => {
 
                                     </div>
                               </div>
-                              <div className="col-lg-3">
+                              <div className="col-lg-3 col-sm-6">
                                     <div className="suctomer-service mb-3">
                                           <h5>CONTACT US</h5>
                                           <p>

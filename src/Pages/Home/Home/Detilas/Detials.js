@@ -183,7 +183,7 @@ const Detials = () => {
                         </div>
                   </div>
                   <div className="container">
-                        <div className='d-flex justify-content-between'>
+                        <div className='d-flex justify-content-between details-btn'>
                               <span className=''>
                               <button onClick={()=> navigate('/')} className='primary-btn text-start'><FiArrowLeftCircle className='mx-1'></FiArrowLeftCircle> Back </button>
                               </span>

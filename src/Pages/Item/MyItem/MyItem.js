@@ -42,7 +42,7 @@ const MyItem = () => {
 
       }
       return (
-            <div className="manage-itemlist h-100 mt-3">
+            <div className="manage-itemlist h-100 mt-3 mb-5">
                    <PageTitle title='My Item'></PageTitle>
                   <div className="container">
                         <div className="all-item">
