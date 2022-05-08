@@ -18,6 +18,7 @@ import RequareAuth from './Pages/Login/RequareAuth/RequareAuth';
 import Footer from './Pages/Home/Footer/Footer';
 import Blogs from './Pages/Home/Blogs/Blogs';
 import PageNotFound from './Pages/Utilitis/PageNotFound/PageNotFound';
+
 function App() {
   return (
     <div className="Apps bg-light">
@@ -40,6 +41,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/blog' element={<Blogs></Blogs>}></Route>
+        
         <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>

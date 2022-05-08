@@ -20,3 +20,17 @@
             
       }
 }
+
+@media screen and (min-width: 750px) and (max-width: 1023px) {
+      .new-banner{
+            background-image: url('../../../Picture/banner-5.jpg');
+            background-size: cover;
+            
+            height: 300px;
+        
+            background-repeat: no-repeat;
+         
+            
+      }
+    
+}
