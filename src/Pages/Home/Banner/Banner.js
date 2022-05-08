@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Banner.css'
+import { FiArrowRightCircle } from 'react-icons/fi';
 
 
 const Banner = () => {
@@ -14,7 +15,7 @@ const Banner = () => {
                                           <h1 className='title'>WALTON MY BRAND</h1>
                                           <p className='my-3 title-text'>Walton air conditioners can help to make your body cool and mind fresh. It can cool down the temperature of your home by drawing out. 
                                           </p>
-                                          <button onClick={() => navigate('/blog')} className='primary-btn '>Read More</button>
+                                          <button onClick={() => navigate('/blog')} className='primary-btn py-2'>Read More <FiArrowRightCircle></FiArrowRightCircle></button>
                                     </div>
                               </div>
 
